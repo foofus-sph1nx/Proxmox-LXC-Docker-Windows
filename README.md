@@ -18,6 +18,7 @@ lxc.mount.entry: /dev/kvm dev/kvm none bind,optional,create=file
 ```
 
 - Restart container after making these changes
+- Next install docker (apt install docker.io)
 - Next install portainer (or choice of docker management software) and then create a stack. The exact compose file can be found below.
 - I have added a macvlan and enabled DHCP so that the Windows system gets an IP from the router.
 - The VNC connection IP is whatever x.x.x.x is set to while the RDP access is via the IP that the router provides.
