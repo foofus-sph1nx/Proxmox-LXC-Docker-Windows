@@ -38,25 +38,25 @@ services:
     networks:
       macvlan1:
         ipv4_address: x.x.x.x
-   privileged: true
-   environment:
-     VERSION: "10"
-     DHCP: "Y"
-   devices:
-     - /dev/kvm
-     - /dev/vhost-net
-   volumes:
-     - /home/storage:/data
-   cap_add:
-     - NET_ADMIN
-   ports:
-     - 8006:8006
-     - 3389:3389/tcp
-     - 3389:3389/udp
-   stop_grace_period: 2m
-   sysctls:
-     - net.ipv4.ip_forward=1
+    privileged: true
+    environment:
+      - VERSION: "10"
+      - DHCP: "Y"
+    devices:
+      - /dev/kvm
+      - /dev/vhost-net
+    volumes:
+      - /home/storage:/data
+    cap_add:
+      - NET_ADMIN
+    ports:
+      - 8006:8006
+      - 3389:3389/tcp
+      - 3389:3389/udp
+    stop_grace_period: 2m
+    sysctls:
+      - net.ipv4.ip_forward=1
 networks:
   macvlan1:
-     external: true
+    external: true
 ```
